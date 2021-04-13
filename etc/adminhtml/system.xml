@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="catalog">
+            <group id="weatherapi" translate="label" type="text" sortOrder="100" showInDefault="1">
+                <label>Weather API</label>
+                <field id="comradeyanis_weather_enable" translate="label" type="select" sortOrder="10" showInDefault="1" canRestore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="comradeyanis_weather_api_key" translate="label" type="text" sortOrder="20" showInDefault="1" canRestore="1">
+                    <label>Api Key</label>
+                </field>
+                <field id="comradeyanis_weather_api_url" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Api Url</label>
+                </field>
+                <field id="comradeyanis_weather_api_query" translate="label" type="text" sortOrder="40" showInDefault="1" canRestore="1">
+                    <label>Query</label>
+                </field>
+                <field id="comradeyanis_weather_units" translate="label" type="text" sortOrder="50" showInDefault="1" canRestore="1">
+                    <label>Metric</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
