@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <catalog>
+            <weatherapi>
+                <comradeyanis_weather_enable>1</comradeyanis_weather_enable>
+                <comradeyanis_weather_api_key>8a182210cbmsha6209af62373ff8p1cbd1djsn7393cf7815ca</comradeyanis_weather_api_key>
+                <comradeyanis_weather_api_url>https://community-open-weather-map.p.rapidapi.com/weather</comradeyanis_weather_api_url>
+                <comradeyanis_weather_api_query>Lublin</comradeyanis_weather_api_query>
+                <comradeyanis_weather_units>metric</comradeyanis_weather_units>
+            </weatherapi>
+        </catalog>
+    </default>
+</config>

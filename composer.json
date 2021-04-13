@@ -1,5 +1,5 @@
 {
-    "name": "comradeyanis/whetherapi",
+    "name": "comradeyanis/weatherapi",
     "description": "magento 2 api module for view weather and store the data in db about. module which will be getting from API the current weather in Lublin and show it on the website",
     "minimum-stability": "stable",
     "license": "proprietary",
