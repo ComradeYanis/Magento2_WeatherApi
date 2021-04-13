@@ -26,6 +26,9 @@
                 <field id="comradeyanis_weather_units" translate="label" type="text" sortOrder="50" showInDefault="1" canRestore="1">
                     <label>Metric</label>
                 </field>
+                <field id="comradeyanis_weather_interval" translate="label" type="text" sortOrder="60" showInDefault="1" canRestore="1">
+                    <label>Update data interval (in minutes)</label>
+                </field>
             </group>
         </section>
     </system>

@@ -9,6 +9,7 @@
                 <comradeyanis_weather_api_url>https://community-open-weather-map.p.rapidapi.com/weather</comradeyanis_weather_api_url>
                 <comradeyanis_weather_api_query>Lublin</comradeyanis_weather_api_query>
                 <comradeyanis_weather_units>metric</comradeyanis_weather_units>
+                <comradeyanis_weather_interval>10</comradeyanis_weather_interval>
             </weatherapi>
         </catalog>
     </default>
