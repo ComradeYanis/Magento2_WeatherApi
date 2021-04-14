@@ -78,7 +78,7 @@ class WeatherDataUpdater
             $weather->setName($apiData['name'] ?? '');
             $weather->setDescription($apiData['weather'][0]['description'] ?? '');
             $weather->setTemp($apiData['main']['temp'] ?? '');
-            $weather->setTempMax($apiData['main']['tempmax'] ?? '');
+            $weather->setTempMax($apiData['main']['temp_max'] ?? '');
             $weather->setHumidity($apiData['main']['humidity'] ?? '');
             $weather->setPressure($apiData['main']['pressure'] ?? '');
             $weather->setWindSpeed($apiData['wind']['speed'] ?? '');

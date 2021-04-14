@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ComradeYanis\WeatherApi\Controller\Adminhtml\Api;
 
+use ComradeYanis\WeatherApi\Cron\WeatherDataUpdater;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Backend\Model\View\Result\Page;
@@ -21,6 +22,10 @@ class Index extends Action implements HttpGetActionInterface
      * @var PageFactory
      */
     private $pageFactory;
+    /**
+     * @var WeatherDataUpdater
+     */
+    private $test;
 
     /**
      * Index constructor.
@@ -29,10 +34,12 @@ class Index extends Action implements HttpGetActionInterface
      */
     public function __construct(
         Context $context,
-        PageFactory $pageFactory
+        PageFactory $pageFactory,
+        WeatherDataUpdater $test
     ) {
         parent::__construct($context);
         $this->pageFactory = $pageFactory;
+        $this->test = $test;
     }
 
     /**
@@ -41,6 +48,7 @@ class Index extends Action implements HttpGetActionInterface
     public function execute()
     {
         /** @var Page $resultPage */
+        $test = $this->test->execute();
         $resultPage = $this->pageFactory->create();
         $resultPage->setActiveMenu('ComradeYanis_WeatherApi::weather_api')
             ->addBreadcrumb(__('Weather API'), __('Weather API'))

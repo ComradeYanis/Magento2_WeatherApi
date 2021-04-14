@@ -66,10 +66,9 @@ class ApiClient
         $response = $curlClient->getBody();
 
         $result = $this->serializer->unserialize($response);
-        if (!isset($result['cod']) || $result['cod'] != 200) {
-            throw new \Exception(__('Weather api error. Check your credentials'));
+        if (isset($result['cod']) && $result['cod'] == 200) {
+            return $result;
         }
-
-        return $result;
+        throw new \Exception(__('Weather api error. Check your credentials'));
     }
 }

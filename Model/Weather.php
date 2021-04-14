@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace ComradeYanis\WeatherApi\Model;
 
 use ComradeYanis\WeatherApi\Api\Data\WeatherInterface;
+use ComradeYanis\WeatherApi\Model\ResourceModel\Weather as WeatherResource;
 use Magento\Framework\Model\AbstractModel;
 
 /**
@@ -12,6 +13,14 @@ use Magento\Framework\Model\AbstractModel;
  */
 class Weather extends AbstractModel implements WeatherInterface
 {
+    /**
+     * init constructor
+     */
+    protected function _construct()
+    {
+        $this->_init(WeatherResource::class);
+    }
+
     /**
      * @return string
      */
