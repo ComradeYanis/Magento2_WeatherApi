@@ -1,0 +1,33 @@
+<?php
+
+use ComradeYanis\WeatherApi\Block\WeatherData;
+use Magento\Framework\Escaper;
+
+/** @var WeatherData $block */
+/** @var Escaper $escaper  */
+
+?>
+
+<?php if ($block->isEnable()) : ?>
+    <h1 id="weather">Weather Data</h1>
+    <div class="wrapper weather-data">
+        <div data-bind="scope: 'weatherData'" id="weather-data">
+            <!-- ko template: getTemplate() --><!-- /ko -->
+        </div>
+    </div>
+
+    <script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "weatherData": {
+                            "component": "ComradeYanis_WeatherApi/js/weather-data",
+                            "interval": <?= $escaper->escapeJs($block->getInterval()) ?>
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+<?php endif; ?>

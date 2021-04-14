@@ -4,6 +4,8 @@
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="ComradeYanis\WeatherApi\Api\Data\WeatherInterface"
                 type="ComradeYanis\WeatherApi\Model\Weather"/>
+    <preference for="ComradeYanis\WeatherApi\Api\WeatherApiInterface"
+                type="ComradeYanis\WeatherApi\Model\Api\WeatherApi"/>
 
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
