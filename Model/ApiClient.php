@@ -14,19 +14,28 @@ use Magento\Framework\Serialize\SerializerInterface;
  */
 class ApiClient
 {
+
     /**
      * @var CurlFactory
      */
     private $curlFactory;
+
     /**
      * @var Config
      */
     private $config;
+
     /**
      * @var SerializerInterface
      */
     private $serializer;
 
+    /**
+     * ApiClient constructor.
+     * @param CurlFactory $curlFactory
+     * @param Config $config
+     * @param SerializerInterface $serializer
+     */
     public function __construct(
         CurlFactory $curlFactory,
         Config $config,
@@ -39,6 +48,7 @@ class ApiClient
 
     /**
      * @return array
+     * @throws \Exception
      */
     public function execute()
     {
@@ -55,6 +65,11 @@ class ApiClient
         $curlClient->get($url);
         $response = $curlClient->getBody();
 
-        return $this->serializer->unserialize($response);
+        $result = $this->serializer->unserialize($response);
+        if (!isset($result['cod']) || $result['cod'] != 200) {
+            throw new \Exception(__('Weather api error. Check your credentials'));
+        }
+
+        return $result;
     }
 }

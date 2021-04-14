@@ -28,6 +28,7 @@
                 </field>
                 <field id="comradeyanis_weather_interval" translate="label" type="text" sortOrder="60" showInDefault="1" canRestore="1">
                     <label>Update data interval (in minutes)</label>
+                    <validate>validate-zero-or-greater validate-digits</validate>
                 </field>
             </group>
         </section>
